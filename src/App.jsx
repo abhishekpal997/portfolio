@@ -10,16 +10,13 @@ import { Icon } from "@iconify/react";
 
   Image setup:
   1. Add your photo in public folder, example: public/abhishek-pal.png
-  2. Add these portfolio images in public folder with the same names:
-     public/portfolio-photography-course.png
-     public/portfolio-fashion-ecommerce.png
-     public/portfolio-preschool-website.png
-     public/portfolio-dairy-equipment.png
-     public/portfolio-ai-saas.png
-     public/portfolio-doctor-clinic.png
-
-  3. Portfolio images are shown inside the right-side preview column, not as background images.
-     Suggested size: 1920x1080 or 1600x1000.
+  2. Add portfolio images in public folder with the same names:
+     public/portfolio-mern-dashboard.png
+     public/portfolio-laravel-ecommerce.png
+     public/portfolio-wordpress-business.png
+     public/portfolio-shopify-store.png
+     public/portfolio-php-admin-panel.png
+     public/portfolio-medical-website.png
 */
 
 const PROFILE_IMAGE = "/abhishek-pal.png";
@@ -30,102 +27,103 @@ const CONTACT_EMAIL = "info@desipik.com";
 const createWhatsAppLink = (message = "Hello, I want to discuss a website project.") =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-const createMailToLink = ({ name, email, phone, service, budget, message }) => {
-  const subject = "New Website Project Enquiry - DesiPik";
-  const body = `Name: ${name || ""}
-Email: ${email || ""}
-Phone: ${phone || ""}
-Service: ${service || ""}
-Budget / Timeline: ${budget || ""}
-
-Message:
-${message || ""}`;
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-};
-
-
 const navLinks = [
   { label: "About Me", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Why Choose Me", href: "#why-choose" },
+  { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
 
 const stats = [
   { icon: "solar:case-round-bold", value: "50+", label: "Projects Delivered" },
-  { icon: "solar:users-group-rounded-bold", value: "30+", label: "Happy Clients" },
+  { icon: "solar:code-square-bold", value: "Full Stack", label: "Development" },
   { icon: "solar:medal-ribbons-star-bold", value: "5+", label: "Years Experience" },
-  { icon: "solar:chart-2-bold", value: "100%", label: "Growth Focused" },
+  { icon: "solar:chart-2-bold", value: "100%", label: "Business Focused" },
 ];
 
 const services = [
   {
-    title: "Ecommerce Website Design",
+    title: "MERN Stack Development",
+    icon: "logos:react",
+    desc: "Modern full stack web applications using MongoDB, Express.js, React.js, Node.js, API integration, dashboards, authentication, and scalable UI.",
+  },
+  {
+    title: "PHP & Laravel Development",
+    icon: "logos:laravel",
+    desc: "Custom Laravel websites, ecommerce systems, admin panels, enquiry systems, product management, order flow, APIs, and secure backend logic.",
+  },
+  {
+    title: "WordPress Website Development",
+    icon: "logos:wordpress-icon",
+    desc: "Business websites, Elementor layouts, custom themes, landing pages, speed optimization, SEO structure, forms, and plugin setup.",
+  },
+  {
+    title: "Shopify Store Development",
+    icon: "logos:shopify",
+    desc: "Professional Shopify stores with product pages, collections, theme customization, conversion sections, app setup, and mobile-first design.",
+  },
+  {
+    title: "Ecommerce Website Development",
     icon: "solar:cart-large-bold",
-    desc: "High-converting ecommerce websites with product pages, cart flow, enquiry CTA, WhatsApp integration, and mobile-first UI.",
+    desc: "Complete ecommerce websites with product catalogue, cart, checkout, coupon, enquiry CTA, WhatsApp integration, and admin management.",
   },
   {
-    title: "Business Website Development",
-    icon: "solar:monitor-bold",
-    desc: "Professional websites for companies, agencies, manufacturers, service providers, and personal brands.",
+    title: "API & Backend Integration",
+    icon: "solar:server-bold",
+    desc: "REST APIs, payment gateways, courier/shipping APIs, CRM forms, email setup, database structure, and third-party service integrations.",
   },
   {
-    title: "Brand Identity Design",
-    icon: "solar:pen-new-round-bold",
-    desc: "Premium logo direction, color system, typography, brand style, and visual communication for modern businesses.",
-  },
-  {
-    title: "UI/UX Design",
+    title: "UI/UX & Frontend Development",
     icon: "solar:smartphone-bold",
-    desc: "Clean website and app interfaces designed for better trust, readability, navigation, and conversions.",
+    desc: "Responsive interfaces using React, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap, animations, and conversion-focused layouts.",
   },
   {
-    title: "Digital Marketing & SEO",
+    title: "SEO Ready Website Structure",
     icon: "solar:ranking-bold",
-    desc: "SEO-ready structure, keyword-focused content sections, landing page strategy, and conversion optimization.",
-  },
-  {
-    title: "Creative Content Design",
-    icon: "solar:camera-bold",
-    desc: "Social media creatives, ad banners, portfolio visuals, campaign assets, and premium digital content design.",
+    desc: "SEO-friendly page structure, meta-ready layouts, schema sections, performance improvements, internal linking support, and content-focused design.",
   },
 ];
 
 const whyChoose = [
   {
-    icon: "solar:target-bold",
-    title: "Conversion-Focused Design",
-    desc: "Every section is planned to guide visitors toward enquiry, trust, and business action.",
+    icon: "solar:code-square-bold",
+    title: "Complete Full Stack Skillset",
+    desc: "I can handle frontend, backend, database, admin panel, API integration, and deployment-level planning.",
   },
   {
     icon: "solar:smartphone-update-bold",
-    title: "Fully Responsive UI",
-    desc: "Your website looks premium on mobile, tablet, laptop, and large desktop screens.",
+    title: "Responsive & Modern UI",
+    desc: "Websites are designed to look clean and professional on mobile, tablet, laptop, and desktop screens.",
   },
   {
-    icon: "solar:code-square-bold",
-    title: "Clean React Code",
-    desc: "Reusable sections, smooth animations, modern UI structure, and easy customization.",
+    icon: "solar:shield-check-bold",
+    title: "Business Practical Approach",
+    desc: "I build websites with real business use cases like leads, enquiries, product management, orders, and conversions.",
   },
   {
     icon: "solar:graph-up-bold",
-    title: "SEO & Growth Ready",
-    desc: "Content is written with keyword-friendly headings and business-focused positioning.",
+    title: "SEO & Performance Focus",
+    desc: "I structure pages with proper headings, clean UI, fast loading mindset, and search-friendly sections.",
   },
 ];
 
 const skills = [
-  ["Figma", "logos:figma"],
-  ["Photoshop", "logos:adobe-photoshop"],
-  ["Illustrator", "logos:adobe-illustrator"],
-  ["HTML", "logos:html-5"],
-  ["CSS", "logos:css-3"],
-  ["JavaScript", "logos:javascript"],
-  ["React", "logos:react"],
-  ["WordPress", "logos:wordpress-icon"],
-  ["Laravel", "logos:laravel"],
-  ["SEO", "solar:ranking-bold"],
+  { name: "HTML5", icon: "logos:html-5", level: 95, group: "Frontend" },
+  { name: "CSS3", icon: "logos:css-3", level: 92, group: "Frontend" },
+  { name: "JavaScript", icon: "logos:javascript", level: 88, group: "Frontend" },
+  { name: "React.js", icon: "logos:react", level: 85, group: "MERN" },
+  { name: "Node.js", icon: "logos:nodejs-icon", level: 78, group: "MERN" },
+  { name: "Express.js", icon: "simple-icons:express", level: 76, group: "MERN" },
+  { name: "MongoDB", icon: "logos:mongodb-icon", level: 75, group: "Database" },
+  { name: "PHP", icon: "logos:php", level: 86, group: "Backend" },
+  { name: "Laravel", icon: "logos:laravel", level: 88, group: "Backend" },
+  { name: "MySQL", icon: "logos:mysql-icon", level: 84, group: "Database" },
+  { name: "WordPress", icon: "logos:wordpress-icon", level: 90, group: "CMS" },
+  { name: "Shopify", icon: "logos:shopify", level: 82, group: "Ecommerce" },
+  { name: "Tailwind CSS", icon: "logos:tailwindcss-icon", level: 88, group: "Frontend" },
+  { name: "Bootstrap", icon: "logos:bootstrap", level: 90, group: "Frontend" },
+  { name: "SEO", icon: "solar:ranking-bold", level: 86, group: "Growth" },
 ];
 
 const portfolio = [
@@ -360,6 +358,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Services />
         <WhyChooseMe />
         <Portfolio
           categories={categories}
@@ -387,8 +386,8 @@ function Logo() {
         <h1 className="text-lg font-black uppercase leading-none tracking-[0.14em] text-[#111] sm:text-xl">
           Abhishek Pal
         </h1>
-        <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.38em] text-[#5F5A50] sm:text-[10px]">
-          Creative Agency
+        <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.22em] text-[#5F5A50] sm:text-[10px]">
+          Full Stack Developer
         </p>
       </div>
     </a>
@@ -425,12 +424,12 @@ function Navbar({ menuOpen, setMenuOpen }) {
           </nav>
 
           <a
-            href={createWhatsAppLink("Hello, I want to discuss a website project.")}
+            href={createWhatsAppLink("Hello, I want to discuss a full stack website project.")}
             target="_blank"
             rel="noreferrer"
             className="hidden items-center gap-3 rounded-full bg-gradient-to-r from-[#D8A84D] to-[#B8862F] px-7 py-4 text-sm font-bold text-white shadow-[0_15px_35px_rgba(200,155,67,0.35)] transition hover:-translate-y-1 lg:flex"
           >
-            Let’s Work Together
+            Hire Me
             <span className="grid h-9 w-9 place-items-center rounded-full bg-[#1D1D1D]">
               <Icon icon="solar:arrow-right-up-linear" width="20" />
             </span>
@@ -469,8 +468,8 @@ function Navbar({ menuOpen, setMenuOpen }) {
               <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
                   <p className="text-3xl font-black tracking-[-0.14em] text-[#D8A84D]">AP</p>
-                  <p className="mt-1 text-xs font-black uppercase tracking-[0.26em] text-white/55">
-                    Creative Agency
+                  <p className="mt-1 text-xs font-black uppercase tracking-[0.18em] text-white/55">
+                    Full Stack Developer
                   </p>
                 </div>
                 <button
@@ -514,12 +513,12 @@ function Navbar({ menuOpen, setMenuOpen }) {
               </motion.nav>
 
               <div className="mt-8 rounded-[28px] bg-[#D8A84D] p-5 text-[#151515]">
-                <p className="text-xs font-black uppercase tracking-[0.25em]">Ready to start?</p>
+                <p className="text-xs font-black uppercase tracking-[0.25em]">Available for work</p>
                 <h3 className="mt-3 text-2xl font-black leading-tight tracking-[-0.04em]">
-                  Let’s build your next premium website.
+                  MERN, Laravel, WordPress & Shopify projects.
                 </h3>
                 <a
-                  href={createWhatsAppLink("Hello, I want to start a website project.")}
+                  href={createWhatsAppLink("Hello, I want to discuss a website development project.")}
                   target="_blank"
                   rel="noreferrer"
                   onClick={closeMenu}
@@ -538,12 +537,24 @@ function Navbar({ menuOpen, setMenuOpen }) {
 }
 
 function Hero() {
+  const floatingIcons = [
+    { icon: "logos:react", className: "top-8 left-8 sm:top-12 sm:left-12 lg:top-16 lg:left-16" },
+    { icon: "logos:laravel", className: "top-16 right-7 sm:top-24 sm:right-10 lg:top-28 lg:right-14" },
+    { icon: "logos:wordpress-icon", className: "bottom-32 left-5 sm:bottom-40 sm:left-8 lg:bottom-44 lg:left-10" },
+    { icon: "logos:shopify", className: "bottom-24 right-6 sm:bottom-32 sm:right-8 lg:bottom-36 lg:right-12" },
+    { icon: "logos:javascript", className: "top-[48%] left-0 sm:left-2 lg:left-4" },
+  ];
+
   return (
-    <section id="home" className="relative z-10 px-5 pb-12 pt-32 sm:pt-36 lg:px-10 lg:pt-44">
-      <div className="mx-auto max-w-[1700px]">
+    <section
+      id="home"
+      className="relative z-10 overflow-hidden bg-[linear-gradient(135deg,#fff8ec_0%,#f8e8c8_38%,#fffdf8_68%,#f3dfb6_100%)] px-5 pb-16 pt-32 sm:pt-36 lg:px-10 lg:pt-44"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_18%,rgba(216,168,77,0.32),transparent_32%),radial-gradient(circle_at_10%_85%,rgba(184,134,47,0.22),transparent_34%)]" />
+
+      <div className="mx-auto max-w-[1700px] relative z-10">
         <div className="flex min-h-[auto] flex-col-reverse items-center gap-12 lg:grid lg:min-h-[680px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
 
-          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -552,22 +563,22 @@ function Hero() {
           >
             <p className="mb-8 flex items-center gap-5 text-xs font-black uppercase tracking-[0.36em] text-[#C89B43] sm:text-sm sm:tracking-[0.5em]">
               <span className="h-[2px] w-14 bg-[#C89B43]" />
-              Creative Agency
+              Full Stack Developer
             </p>
 
-            <h2 className="reveal-title max-w-5xl text-[46px] font-black uppercase leading-[0.88] tracking-[-0.075em] min-[390px]:text-[52px] sm:text-7xl md:text-8xl xl:text-[116px]">
+            <h2 className="reveal-title max-w-5xl font-serif text-[50px] font-bold leading-[1.08] tracking-[-0.045em] text-[#151515] min-[390px]:text-[58px] sm:text-7xl md:text-8xl xl:text-[112px]">
               Abhishek <span className="text-[#C89B43]">Pal</span>
             </h2>
 
-            <div className="mt-6 inline-flex max-w-full rounded-full border border-[#ECE3D4] bg-white px-5 py-3 text-[10px] font-black uppercase tracking-[0.18em] text-[#4C463D] shadow-sm sm:px-6 sm:text-xs md:tracking-[0.35em]">
-              Premium Web Design • Branding • Growth Marketing
+            <div className="mt-6 inline-flex max-w-full rounded-full border border-[#ECE3D4] bg-white/90 backdrop-blur-xl px-5 py-3 text-[10px] font-black uppercase tracking-[0.18em] text-[#4C463D] shadow-sm sm:px-6 sm:text-xs md:tracking-[0.35em]">
+              MERN Stack • PHP Laravel • WordPress • Shopify
               <span className="ml-3 text-[#C89B43]">✦</span>
             </div>
 
             <p className="mt-8 max-w-2xl text-base leading-8 text-[#55504A] md:text-lg md:leading-9">
-              I build premium websites, ecommerce experiences, brand identities,
-              and digital marketing assets that help businesses look professional,
-              generate enquiries, and grow with confidence.
+              I build premium full stack websites, ecommerce experiences,
+              admin panels, dashboards, APIs, and business-focused digital platforms
+              that help brands grow online.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-5">
@@ -599,28 +610,34 @@ function Hero() {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE SECTION */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            className="parallax-soft relative mx-auto mt-4 flex h-[430px] w-full max-w-[420px] items-center justify-center sm:h-[560px] sm:max-w-[560px] md:h-[650px] md:max-w-[680px] lg:mt-0"
+            className="parallax-soft relative mx-auto mt-4 flex h-[440px] w-full max-w-[430px] items-center justify-center sm:h-[580px] sm:max-w-[590px] md:h-[680px] md:max-w-[720px] lg:mt-0"
           >
+            <div className="absolute h-[300px] w-[300px] rounded-full bg-gradient-to-br from-[#f6d28a] to-[#fff2d1] blur-[2px] sm:h-[420px] sm:w-[420px] md:h-[520px] md:w-[520px]" />
 
-            {/* BACKGROUND CIRCLE */}
-            <div className="absolute h-[300px] w-[300px] rounded-full bg-[#F1D59D] sm:h-[420px] sm:w-[420px] md:h-[520px] md:w-[520px]" />
-
-            {/* ORBIT */}
             <div className="bg-orbit absolute h-[340px] w-[340px] rounded-full border border-[#D8A84D]/40 sm:h-[470px] sm:w-[470px] md:h-[580px] md:w-[580px]" />
 
-            {/* FLOATING CARD */}
-            <div className="hero-float absolute hidden md:block right-2 top-3 z-30 max-w-[170px] rounded-[20px] border border-white bg-white/90 p-3 shadow-[0_25px_80px_rgba(20,20,20,0.1)] backdrop-blur-xl sm:right-0 sm:top-20 sm:max-w-none sm:rounded-[30px] sm:p-5 md:p-7">
+            {floatingIcons.map((item, index) => (
+              <motion.div
+                key={index}
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 3 + index, repeat: Infinity }}
+                className={`absolute ${item.className} z-30 grid h-11 w-11 place-items-center rounded-2xl border border-white/60 bg-white/92 shadow-[0_18px_48px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:h-14 sm:w-14 md:h-16 md:w-16`}
+              >
+                <Icon icon={item.icon} className="text-[24px] sm:text-[30px] md:text-[34px]" />
+              </motion.div>
+            ))}
+
+            <div className="hero-float absolute hidden md:block right-0 top-16 z-30 max-w-[250px] rounded-[24px] border border-white/70 bg-white/88 p-6 shadow-[0_25px_80px_rgba(20,20,20,0.08)] backdrop-blur-xl lg:right-4 lg:top-20">
               <p className="text-sm font-bold text-[#C89B43]">
-                Creative Director
+                Full Stack Developer
               </p>
 
-              <h3 className="mt-4 max-w-[210px] text-xl font-bold leading-tight md:text-2xl">
-                Turning Ideas Into Impactful Digital Brands
+              <h3 className="mt-4 max-w-[210px] text-xl font-bold leading-tight md:text-2xl text-[#151515]">
+                Building Modern Websites & Web Applications
               </h3>
 
               <div className="mt-6 h-[2px] w-12 bg-[#C89B43]" />
@@ -630,8 +647,8 @@ function Hero() {
               </p>
             </div>
 
-            {/* PROFILE IMAGE */}
-            <div className="absolute bottom-[82px] z-20 flex h-[260px] w-[260px] items-end justify-center overflow-hidden rounded-full sm:bottom-[80px] sm:h-[380px] sm:w-[380px] md:h-[470px] md:w-[470px]">
+            <div className="absolute bottom-[82px] z-20 flex h-[260px] w-[260px] items-end justify-center overflow-hidden rounded-full border-[10px] border-white bg-white shadow-[0_30px_90px_rgba(216,168,77,0.28)] sm:bottom-[80px] sm:h-[380px] sm:w-[380px] md:h-[470px] md:w-[470px]">
+              <div className="absolute inset-0 rounded-full border-[5px] border-dashed border-[#D8A84D]/45 animate-spin [animation-duration:18s]" />
 
               <img
                 src={PROFILE_IMAGE}
@@ -639,32 +656,29 @@ function Hero() {
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
-                className="h-full w-full object-contain object-bottom"
+                className="relative z-10 h-full w-full object-contain object-bottom"
               />
             </div>
 
-            {/* BLACK INFO CARD */}
-            <div className="absolute bottom-0 z-30 w-full rounded-[20px] bg-[#171717] p-4 text-white shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:w-[92%] sm:rounded-[26px] sm:p-5 md:p-6">
-
+            <div className="absolute bottom-0 z-30 w-full rounded-[24px] border border-white/60 bg-white/85 p-4 text-[#151515] shadow-[0_20px_60px_rgba(0,0,0,0.10)] backdrop-blur-xl sm:w-[92%] sm:p-5 md:p-6">
               <div className="flex items-center gap-5">
                 <div className="text-5xl font-black tracking-[-0.18em] text-[#D8A84D]">
                   AP
                 </div>
 
-                <div className="h-12 w-px bg-white/20" />
+                <div className="h-12 w-px bg-[#D8A84D]/30" />
 
                 <div>
-                  <p className="font-serif text-3xl italic text-white md:text-4xl">
+                  <p className="font-serif text-3xl italic text-[#151515] md:text-4xl">
                     Abhishek Pal
                   </p>
 
-                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.25em] text-white/60">
-                    Web Designer • Brand Strategist
+                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.25em] text-[#6c6458]">
+                    MERN • Laravel • WordPress • Shopify
                   </p>
                 </div>
               </div>
             </div>
-
           </motion.div>
         </div>
 
@@ -690,13 +704,11 @@ function StatsBar() {
       ))}
 
       <div className="hidden items-center gap-8 border-l border-[#E9E1D5] pl-10 xl:flex">
-        <p className="text-xs font-black uppercase tracking-[0.25em] text-[#5F5A50]">
-          Built For
-        </p>
+        <p className="text-xs font-black uppercase tracking-[0.25em] text-[#5F5A50]">Works On</p>
         <div className="flex items-center gap-6 text-lg font-black text-[#111]">
-          <span>Brands</span>
-          <span>Startups</span>
+          <span>Web Apps</span>
           <span>Ecommerce</span>
+          <span>CMS</span>
         </div>
       </div>
     </div>
@@ -706,31 +718,28 @@ function StatsBar() {
 function About() {
   return (
     <section id="about" className="relative z-10 px-5 py-16 sm:py-20 lg:px-10 lg:py-24">
-      <div className="mx-auto grid max-w-[1600px] gap-10 lg:grid-cols-[0.75fr_1fr_1.15fr]">
-        <div className="gsap-fade-up flex items-center border-l border-[#D8A84D]/50 pl-8">
-          <div>
-            <h3 className="text-7xl font-light text-[#C89B43]">5+</h3>
-            <p className="mt-3 text-sm font-black uppercase leading-6 tracking-[0.08em]">
-              Years of <br /> Creative Experience
+      <div className="mx-auto grid max-w-[1600px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="gsap-fade-up">
+          <div className="mb-8 rounded-[28px] border border-[#E8DFD1] bg-white/85 p-7 shadow-[0_20px_70px_rgba(20,20,20,0.06)] backdrop-blur-xl">
+            <h3 className="font-serif text-7xl font-bold leading-none text-[#C89B43]">5+</h3>
+            <p className="mt-4 text-sm font-black uppercase leading-7 tracking-[0.14em] text-[#151515]">
+              Years of Development Experience
             </p>
           </div>
-        </div>
 
-        <div className="gsap-fade-up">
           <SectionMini title="About Me" />
+
           <SectionTitle>
-            I Design Digital Experiences That Create <span className="text-[#C89B43]">Business Impact.</span>
+            I Develop Complete Websites, Ecommerce Stores & <span className="text-[#C89B43]">Web Applications.</span>
           </SectionTitle>
-          <p className="mt-7 max-w-xl text-lg leading-9 text-[#5F5A50]">
-            I am Abhishek Pal, a web designer, creative strategist, and digital
-            growth professional. My work combines premium UI design, smart content,
-            responsive development, and SEO-friendly structure to help businesses
-            build a strong online presence.
+          <p className="mt-7 max-w-2xl text-lg leading-9 text-[#5F5A50]">
+            I am Abhishek Pal, a Full Stack Developer with practical experience in MERN Stack,
+            PHP, Laravel, WordPress, and Shopify. I create websites that are easy to use,
+            responsive, SEO-ready, and focused on generating real business enquiries.
           </p>
-          <p className="mt-5 max-w-xl text-lg leading-9 text-[#5F5A50]">
-            From ecommerce websites to agency portfolios and business landing pages,
-            I create designs that look modern, communicate clearly, and convert
-            visitors into enquiries.
+          <p className="mt-5 max-w-2xl text-lg leading-9 text-[#5F5A50]">
+            I can manage the complete development process including UI design, frontend coding,
+            backend logic, database, admin panel, API integration, ecommerce setup, and website optimization.
           </p>
           <p className="mt-7 font-serif text-4xl italic text-[#151515]">Abhishek Pal</p>
         </div>
@@ -755,29 +764,63 @@ function About() {
 }
 
 function Skills() {
+  const progressSkills = [
+    { name: "React", value: 92, icon: "logos:react" },
+    { name: "Laravel", value: 90, icon: "logos:laravel" },
+    { name: "WordPress", value: 95, icon: "logos:wordpress-icon" },
+    { name: "Shopify", value: 84, icon: "logos:shopify" },
+    { name: "PHP", value: 88, icon: "logos:php" },
+    { name: "JavaScript", value: 91, icon: "logos:javascript" },
+  ];
+
   return (
     <section id="skills" className="relative z-10 px-5 py-14 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-[1600px]">
-        <SectionHeader eyebrow="Skills" title="Tools, Design Skills & Growth Expertise" />
-        <div className="gsap-scale rounded-[24px] border border-white bg-white p-5 shadow-[0_20px_70px_rgba(20,20,20,0.07)]">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
-            {skills.map(([skill, icon]) => (
-              <motion.div
-                whileHover={{ y: -8 }}
-                key={skill}
-                className="flex min-h-[120px] flex-col items-center justify-center rounded-2xl border border-[#EFE6D9] bg-[#FFFEFB] p-4 text-center transition hover:border-[#C89B43]/60 hover:shadow-[0_18px_40px_rgba(200,155,67,0.16)]"
-              >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-[0_12px_30px_rgba(20,20,20,0.08)]">
-                  <Icon icon={icon} width="30" />
+        <SectionHeader eyebrow="Skills" title="Full Stack Development Skills" />
+
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {progressSkills.map((skill) => (
+            <motion.div
+              whileHover={{ y: -8 }}
+              key={skill.name}
+              className="gsap-scale rounded-[24px] border border-white bg-white p-5 shadow-[0_18px_55px_rgba(20,20,20,0.06)]"
+            >
+              <div className="flex items-center justify-between">
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-[#fff5df] shadow-inner">
+                  <Icon icon={skill.icon} width="27" />
                 </div>
-                <p className="mt-3 text-xs font-bold text-[#151515]">{skill}</p>
-              </motion.div>
-            ))}
-          </div>
+
+                <div className="text-right">
+                  <p className="text-base font-black text-[#151515]">{skill.name}</p>
+                  <p className="text-xs font-bold text-[#8a7f70]">Expertise</p>
+                </div>
+              </div>
+
+              <div className="mt-7 flex justify-center">
+                <div
+                  className="relative flex h-[122px] w-[122px] items-center justify-center rounded-full"
+                  style={{
+                    background: `conic-gradient(#D8A84D ${skill.value * 3.6}deg, #f1e8d7 0deg)`,
+                  }}
+                >
+                  <div className="flex h-[104px] w-[104px] flex-col items-center justify-center rounded-full bg-white shadow-inner">
+                    <span className="text-2xl font-black text-[#151515]">{skill.value}%</span>
+                    <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8a7f70]">
+                      Progress
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
+}
+
+function Services() {
+  return null;
 }
 
 function WhyChooseMe() {
@@ -787,16 +830,14 @@ function WhyChooseMe() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="gsap-fade-up">
             <SectionMini title="Why Choose Me" />
-            <SectionTitle>
-              Premium Design With Business Strategy, Not Just Decoration.
-            </SectionTitle>
+            <SectionTitle>One Developer For Complete Website Planning, Design & Development.</SectionTitle>
             <p className="mt-6 text-lg leading-9 text-[#5F5A50]">
-              I focus on clarity, trust, performance, and conversion. Every design
-              decision is made to improve user experience, communicate your value,
-              and support your business goals.
+              I focus on clean design, practical backend functionality, mobile responsiveness,
+              SEO-friendly structure, and business growth. Whether it is a portfolio website,
+              ecommerce store, CMS website, or full stack web application, I can build it with a clear process.
             </p>
             <a
-              href={createWhatsAppLink("Hello, I want to discuss my project.")}
+              href={createWhatsAppLink("Hello, I want to discuss my website development project.")}
               target="_blank"
               rel="noreferrer"
               className="mt-8 inline-flex items-center gap-4 rounded-full bg-[#151515] px-7 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-[#C89B43]"
@@ -808,10 +849,7 @@ function WhyChooseMe() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {whyChoose.map((item) => (
-              <div
-                key={item.title}
-                className="gsap-scale reveal-card rounded-[28px] border border-white bg-white p-7 shadow-[0_20px_65px_rgba(20,20,20,0.07)]"
-              >
+              <div key={item.title} className="gsap-scale reveal-card rounded-[28px] border border-white bg-white p-7 shadow-[0_20px_65px_rgba(20,20,20,0.07)]">
                 <div className="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-[#F7F0E4] text-[#C89B43]">
                   <Icon icon={item.icon} width="32" />
                 </div>
@@ -1085,16 +1123,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappMessage = `New Website Project Enquiry
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Service: ${formData.service}
-Budget / Timeline: ${formData.budget}
-
-Message:
-${formData.message}`;
+    const whatsappMessage = `New Website Development Enquiry\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nBudget / Timeline: ${formData.budget}\n\nMessage:\n${formData.message}`;
 
     window.open(createWhatsAppLink(whatsappMessage), "_blank");
   };
@@ -1105,12 +1134,11 @@ ${formData.message}`;
         <div className="gsap-fade-up">
           <SectionMini title="Contact" />
           <SectionTitle>
-            Let’s Build Something Amazing <span className="text-[#C89B43]">Together.</span>
+            Let’s Build Your Website Or Web App <span className="text-[#C89B43]">Together.</span>
           </SectionTitle>
           <p className="mt-6 max-w-xl text-lg leading-8 text-[#5F5A50]">
-            Have a project in mind? Share your requirement and I will help you
-            plan a premium website, landing page, ecommerce store, or complete
-            creative brand experience.
+            Share your requirement and I will help you plan a website, ecommerce store,
+            admin panel, WordPress website, Shopify store, Laravel project, or MERN stack application.
           </p>
 
           <div className="mt-10 grid gap-5">
@@ -1128,9 +1156,7 @@ ${formData.message}`;
             <select name="service" value={formData.service} onChange={handleChange} className="rounded-2xl border border-[#E8DFD1] bg-[#FFFEFB] px-5 py-4 text-sm text-[#5F5A50] outline-none transition focus:border-[#C89B43]">
               <option value="">Select Service</option>
               {services.map((service) => (
-                <option key={service.title} value={service.title}>
-                  {service.title}
-                </option>
+                <option key={service.title} value={service.title}>{service.title}</option>
               ))}
             </select>
             <input name="budget" value={formData.budget} onChange={handleChange} className="rounded-2xl border border-[#E8DFD1] bg-[#FFFEFB] px-5 py-4 text-sm outline-none transition focus:border-[#C89B43] md:col-span-2" placeholder="Estimated Budget / Timeline" />
@@ -1172,7 +1198,7 @@ function SectionMini({ title }) {
 
 function SectionTitle({ children }) {
   return (
-    <h2 className="reveal-title mt-5 max-w-3xl text-[34px] font-black leading-[1.3] tracking-[-0.055em] sm:text-[38px] md:text-5xl xl:text-6xl">
+    <h2 className="reveal-title mt-5 max-w-3xl font-serif text-[34px] font-bold leading-[1.18] tracking-[-0.035em] sm:text-[42px] md:text-5xl xl:text-6xl">
       {children}
     </h2>
   );
@@ -1195,10 +1221,20 @@ function BackgroundDecor() {
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_15%_12%,rgba(216,168,77,0.14),transparent_28%),radial-gradient(circle_at_90%_20%,rgba(216,168,77,0.13),transparent_30%),linear-gradient(180deg,#FFFEFB,#FAF8F3)]" />
       <div className="pointer-events-none fixed left-[-160px] top-[420px] z-0 h-[360px] w-[360px] rounded-full border border-[#D8A84D]/30" />
       <div className="pointer-events-none fixed right-[-120px] top-[240px] z-0 h-[260px] w-[260px] rounded-full border border-[#D8A84D]/25" />
-      <div className="pointer-events-none fixed bottom-8 left-2 z-0 text-[160px] font-black tracking-[-0.18em] text-[#C89B43]/5">
-        AP
-      </div>
+      <div className="pointer-events-none fixed bottom-8 left-2 z-0 text-[160px] font-black tracking-[-0.18em] text-[#C89B43]/5">AP</div>
       <style>{`
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #0f0f0f; border-radius: 50px; }
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, #E5C27A 0%, #D8A84D 35%, #C89B43 70%, #B8862F 100%);
+          border-radius: 50px;
+          border: 0.5px solid rgba(255, 255, 255, 0.08);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(180deg, #F2D08D 0%, #E0B45B 35%, #D8A84D 70%, #C89B43 100%);
+        }
+        ::-webkit-scrollbar-corner { background: #0f0f0f; }
+        html { scrollbar-width: thin; scrollbar-color: #D8A84D #0f0f0f; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         .salient-slider { scroll-snap-type: x mandatory; }
@@ -1206,7 +1242,9 @@ function BackgroundDecor() {
         @media (max-width: 767px) {
           .portfolio-bg-image { background-position: center top; opacity: 0.58; }
         }
-        .reveal-title, .gsap-fade-up, .gsap-scale, .reveal-card, .portfolio-slide-inner { will-change: transform, opacity; }
+        .reveal-title, .gsap-fade-up, .gsap-scale, .reveal-card, .portfolio-slide-inner {
+          will-change: transform, opacity;
+        }
       `}</style>
     </>
   );
@@ -1218,7 +1256,7 @@ function Footer() {
       <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-5 text-center md:flex-row">
         <Logo />
         <p className="text-sm text-[#5F5A50]">
-          © {new Date().getFullYear()} Abhishek Pal Creative Agency. All Rights Reserved.
+          © {new Date().getFullYear()} Abhishek Pal Full Stack Developer. All Rights Reserved.
         </p>
       </div>
     </footer>
